@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Normas Legais</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+
+<nav>
+    <div class="nav-inner">
+
+        <div class="nav-brand" onclick="showPage('home')">
+            <span>Normas Legais</span>
+        </div>
+
+        <div class="nav-links">
+
+            <button class="active"
+                data-page="home"
+                onclick="showPage('home')">
+                Início
+            </button>
+
+            <button
+                data-page="normas"
+                onclick="showPage('normas')">
+                Normas
+            </button>
+
+            <button id="adminBtn" style="display:none;"
+            onclick="window.location.href='admin.html'">
+            Admin
+            </button>
+            
+            
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-inner">
+
+            <div>
+
+                <p class="hero-eyebrow">
+                    República Moçambicana
+                </p>
+
+                <h1>
+                    Plataforma de
+                    <br>
+                    Normas Legais
+                </h1>
+
+                <p class="hero-sub">
+                    Aceda à legislação Moçambicana de forma clara,
+                    pesquisável e com explicações simplificadas.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p class="search-label">
+                    Pesquisar Norma
+                </p>
+
+                <div class="search-row">
+
+                    <div class="search-wrap">
+
+                        <input
+                            type="text"
+                            id="hero-search"
+                            class="search-input"
+                            placeholder="Digite palavra-chave..."
+                        >
+
+                    </div>
+
+                    <button
+                        class="btn-search"
+                        onclick="heroSearch()">
+                        Pesquisar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+
+    <!-- ESTATÍSTICAS -->
+    <div class="stats-strip">
+
+        <div class="stats-inner">
+
+            <div>
+                <div class="stat-val">850</div>
+                <div class="stat-label">Normas</div>
+            </div>
+
+            <div>
+                <div class="stat-val">24</div>
+                <div class="stat-label">Categorias</div>
+            </div>
+
+            <div>
+                <div class="stat-val">1.250</div>
+                <div class="stat-label">Utilizadores</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HOME GRID -->
+   
+<div class="home-grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+        
+        <div class="card-header">
+            <h2 class="card-title">Normas Recentes</h2>
+        </div>
+
+        <div class="norm-item">
+            <span class="badge">Lei</span>
+
+            <div class="norm-content">
+                <h3>Lei do Orçamento do Estado para 2025</h3>
+                <span>15 Jan 2025</span>
+            </div>
+        </div>
+
+        <div class="norm-item">
+            <span class="badge">Decreto-Lei</span>
+
+            <div class="norm-content">
+                <h3>Regime jurídico do teletrabalho</h3>
+                <span>03 Fev 2025</span>
+            </div>
+        </div>
+
+        <div class="norm-item">
+            <span class="badge">Regulamento</span>
+
+            <div class="norm-content">
+                <h3>Regulamento das Taxas Municipais de Lisboa</h3>
+                <span>20 Jan 2025</span>
+            </div>
+        </div>
+
+    </div>
+
+<!-- CARD 2 -->
+    <div class="card">
+
+        <div class="card-header">
+            <h2 class="card-title">Categorias em Destaque</h2>
+        </div>
+
+        <div class="category-item">
+            Trabalho
+            <i>›</i>
+        </div>
+
+        <div class="category-item">
+            Educação
+            <i>›</i>
+        </div>
+
+        <div class="category-item">
+            Saúde
+            <i>›</i>
+        </div>
+
+        <div class="category-item">
+            Fiscal
+            <i>›</i>
+        </div>
+
+        <div class="category-item">
+            Habitação
+            <i>›</i>
+        </div>
+
+    </div>
+
+<!-- CARD 3 -->
+    <div class="card card-dark">
+
+        <div class="card-header">
+            <h2 class="card-title">Como Funciona?</h2>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">01</div>
+
+                <div class="step-content">
+                    <h3>Pesquise</h3>
+                    <p>
+                        Procure por palavra-chave, número ou categoria.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+
+                <div class="step-content">
+                    <h3>Leia a explicação</h3>
+                    <p>
+                        Texto original ou versão simplificada para todos.
+                    </p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+
+                <div class="step-content">
+                    <h3>Consulte exemplos</h3>
+                    <p>
+                        Casos práticos para melhor compreensão.
+                    </p>
+                </div>
+            </div>
+
+            <a href="#" class="explore-link">
+                Explorar normas →
+            </a>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<section class="news-card">
+
+    <div class="news-header">
+        <h2>NOTÍCIAS LEGISLATIVAS</h2>
+        <span>Maio 2025</span>
+    </div>
+
+    <div class="news-grid">
+
+        <div class="news-item">
+            <h3>Atualização da Lei do Arrendamento</h3>
+            <p>A Lei n° 58/2025 introduz novos limites à atualização de rendas em zonas de pressão urbanística.</p>
+            <small>12 Mai 2025</small>
+        </div>
+
+        <div class="news-item">
+            <h3>Nova regulamentação para plataformas digitais</h3>
+            <p>O Decreto-Lei n° 31/2025 transpõe a diretiva europeia sobre mercados digitais e serviços de IA.</p>
+            <small>08 Mai 2025</small>
+        </div>
+
+        <div class="news-item">
+            <h3>Alteração ao Código do Trabalho</h3>
+            <p>Entram em vigor as alterações relativas ao direito à desconexão e ao teletrabalho transfronteiriço.</p>
+            <small>02 Mai 2025</small>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- NORMAS -->
+<div id="page-normas" class="page">
+
+    <div class="normas-layout">
+
+        <!-- FILTROS -->
+        <aside class="filtros">
+
+            <div class="card-header">
+                <p class="card-title">
+                    Filtros
+                </p>
+            </div>
+
+            <div class="filtros-body">
+
+                <label class="radio-row">
+                    <input type="radio" name="cat" value="" checked onchange="applyFilters()">
+                    Todas
+                </label>
+
+                <label class="radio-row">
+                    <input type="radio" name="cat" value="Trabalho" onchange="applyFilters()">
+                    Trabalho
+                </label>
+
+                <label class="radio-row">
+                    <input type="radio" name="cat" value="Educação" onchange="applyFilters()">
+                    Educação
+                </label>
+
+            </div>
+
+        </aside>
+
+        <!-- LISTA -->
+        <div>
+
+            <div class="list-header">
+
+                <div>
+
+                    <h1>Listagem de Normas</h1>
+
+                    <p id="list-count" class="list-count">
+                        0 resultados
+                    </p>
+
+                </div>
+
+                <div class="search-bar-sm">
+
+                    <input
+                        type="text"
+                        id="list-search"
+                        placeholder="Pesquisar..."
+                        oninput="applyFilters()"
+                    >
+
+                </div>
+
+            </div>
+
+            <div id="norma-list" class="norma-list"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DETAIL -->
+<div id="page-detail" class="page">
+
+    <div class="detail-layout">
+
+        <button
+            class="back-btn"
+            onclick="showPage('normas')">
+            Voltar
+        </button>
+
+        <div class="detail-header">
+
+            <span id="detail-badge" class="badge"></span>
+
+            
+
+                <h1 id="detail-title" class="detail-title"></h1>
+
+                <p id="detail-meta" class="detail-meta"></p>
+
+                    <div id="detail-resumo-box"></div>
+            
+
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+
+            <button
+                class="tab-btn active"
+                onclick="switchTab('original',this)">
+                Texto Original
+            </button>
+
+            <button
+                class="tab-btn"
+                onclick="switchTab('simplificada',this)">
+                Explicação
+            </button>
+
+            <button
+                class="tab-btn"
+                onclick="switchTab('exemplos',this)">
+                Exemplos
+            </button>
+
+        </div>
+
+        <!-- TAB CONTENT -->
+        <div id="tab-original" class="tab-panel active">
+            Conteúdo original da norma.
+        </div>
+
+        <div id="tab-simplificada" class="tab-panel">
+            Conteúdo simplificado.
+        </div>
+
+        <div id="tab-exemplos" class="tab-panel">
+            Exemplos práticos.
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+    
+    <div class="footer-left">
+        © 2025 Normas Legais - República Mocambicana  </div>
+
+    <div class="footer-links">
+        <a href="#">Glossário Jurídico</a>
+        <a href="#">Guia de Cidadania</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contactos</a>
+        <a href="#">Termos de Uso</a>
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+
+   
+
+     <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-inner">
+
+        <div class="nav-brand" onclick="showPage('home')">
+            <span>Normas Legais</span>
+        </div>
+
+        <div class="nav-links">
+
+            <button class="active"
+    onclick="window.location.href='index.html'">
+    Início
+</button>
+
+           <button
+    onclick="window.location.href='index.html#normas'">
+    Normas
+</button>
+
+            <button id="adminBtn" style="display:none;"
+            onclick="window.location.href='admin.html'">
+            Admin
+            </button>
+            
+            
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- PROTEÇÃO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const userType = localStorage.getItem("userType");
+
+    if (userType !== "admin") {
+        alert("Acesso negado!");
+        window.location.href = "login.html";
+    }
+
+});
+</script>
+
+<!-- BOTÃO LOGOUT-->
+<div style="text-align:right; padding:10px;">
+    <button onclick="logout()">Sair</button>
+</div>
+
+
+<!-- ADMIN PAGE -->
+<div id="page-admin">
+    
+
+    <div class="admin-layout">
+
+        <!-- MENU -->
+        <aside class="admin-menu">
+
+            <div class="admin-menu-header">
+                Painel Admin
+            </div>
+
+            <button class="admin-menu-btn active" onclick="switchAdmin('dashboard',this)">
+                Dashboard
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('adicionar',this)">
+                Adicionar Norma
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('atualizar',this)">
+                Atualizar Norma
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('remover',this)">
+                Remover Norma
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('categorias',this)">
+                Categorias
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('utilizadores',this)">
+                Utilizadores
+            </button>
+
+            <button class="admin-menu-btn" onclick="switchAdmin('notificacoes',this)">
+                Notificações
+            </button>
+
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <div>
+
+            <h1 class="admin-title" id="admin-section-title">
+                Estatísticas do Sistema
+            </h1>
+
+            <!-- DASHBOARD -->
+            <div id="admin-dashboard">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-card-val">850</div>
+                        <div class="stat-card-label">Normas</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-val">24</div>
+                        <div class="stat-card-label">Categorias</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-card-val">1250</div>
+                        <div class="stat-card-label">Utilizadores</div>
+                    </div>
+
+                </div>
+
+                <div class="updates-card">
+                    <div class="card-header">
+                        <p class="card-title">Últimas Atualizações</p>
+                    </div>
+
+                    <div id="admin-updates-list"></div>
+                </div>
+
+            </div>
+
+            
+            <!-- OUTRAS SECÇÕES -->
+            <div id="admin-placeholder" style="display:none">
+                <div class="placeholder-section">
+                    <h2>Em Breve...</h2>
+                    <p>Esta secção está em desenvolvimento. Fique atento às próximas atualizações!</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<footer class="footer">
+    
+    <div class="footer-left">
+        © 2025 Normas Legais - República Mocambicana  </div>
+
+    <div class="footer-links">
+        <a href="#">Glossário Jurídico</a>
+        <a href="#">Guia de Cidadania</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contactos</a>
+        <a href="#">Termos de Uso</a>
+    </div>
+
+</footer>
+
+        <script src="js/script.js"></script>    
+</body>
+</html>

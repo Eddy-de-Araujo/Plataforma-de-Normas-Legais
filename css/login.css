@@ -1,0 +1,177 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+:root {
+  --primary: #1b2a4a;
+  --accent: #ea580c;
+  --bg: #f5f3ef;
+  --card: #ffffff;
+  --text: #1a1816;
+  --muted: #6b6458;
+  --border: rgba(26, 24, 22, .12);
+  --radius: 12px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+}
+
+.card {
+  width: 850px;
+  height: 500px;
+  background: var(--card);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, var(--primary), #0f172a);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.card.active::before {
+  left: 50%;
+}
+
+.form {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.form.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.signin {
+  left: 0;
+}
+
+.signup {
+  left: 50%;
+}
+
+.form h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form p {
+  margin-top: 15px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.form span {
+  color: var(--accent);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card-bg {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.card-bg-1 {
+  background: var(--accent);
+  top: -120px;
+  left: -120px;
+}
+
+.card-bg-2 {
+  background: var(--primary);
+  bottom: -120px;
+  right: -120px;
+}
+
+.image-side{
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.image-side img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-login{
+  right: 0;
+  opacity: 1;
+}
+
+.image-register{
+  left: 0%;
+  opacity: 0;
+}
+
+.card.active .image-login{
+  opacity: 0;
+}
+
+.card.active .image-register{
+  opacity: 1;
+}

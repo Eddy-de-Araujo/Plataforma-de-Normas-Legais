@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+    <script src=".js/login.js"></script>
+
+    <div class="card">
+
+        <div class="card-bg card-bg-1"></div>
+        <div class="card-bg card-bg-2"></div>
+
+        <!-- LOGIN -->
+        <div class="form signin active">
+
+            <h2>Entrar</h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email">
+
+            <input
+                type="password"
+                id="loginSenha"
+                placeholder="Senha">
+
+            <button type="button" onclick="login()">
+                Entrar
+            </button>
+
+            <p>
+                Não tem conta?
+                <span onclick="toggleView()">
+                    Criar conta
+                </span>
+            </p>
+
+        </div>
+
+        <!-- REGISTO -->
+        <div class="form signup">
+
+            <h2>Criar Conta</h2>
+
+            <input
+                type="text"
+                id="regNome"
+                placeholder="Nome">
+
+            <input
+                type="email"
+                id="regEmail"
+                placeholder="Email">
+
+            <input
+                type="password"
+                id="regSenha"
+                placeholder="Senha">
+
+            <button type="button" onclick="registar()">
+                Registar
+            </button>
+
+            <p>
+                Já tem conta?
+                <span onclick="toggleView()">
+                    Entrar
+                </span>
+            </p>
+
+        </div>
+
+        <!-- IMAGEM LOGIN -->
+        <div class="image-side image-login">
+            <img src="img/foto.png" alt="">
+        </div>
+
+        <!-- IMAGEM REGISTO -->
+        <div class="image-side image-register">
+            <img src="img/foto1.png" alt="">
+        </div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
