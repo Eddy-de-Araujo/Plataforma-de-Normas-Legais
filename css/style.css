@@ -1299,6 +1299,52 @@ body.hide-footer footer{
   }
 }
 
+/* ── ADMIN RESPONSIVO ── */
+@media (max-width: 768px) {
+
+  .admin-layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .admin-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--radius);
+  }
+
+  .admin-menu-header {
+    grid-column: 1 / -1;
+  }
+
+  .admin-menu-btn {
+    padding: 10px 8px;
+    font-size: 13px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .admin-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
