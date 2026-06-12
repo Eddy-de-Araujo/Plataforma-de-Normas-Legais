@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -18,15 +17,17 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--primary);
+  padding: 20px;
 }
 
 .card {
-  width: 850px;
+  width: 100%;
+  max-width: 850px;
   height: 500px;
   background: var(--card);
   border-radius: var(--radius);
@@ -74,13 +75,8 @@ body {
   pointer-events: all;
 }
 
-.signin {
-  left: 0;
-}
-
-.signup {
-  left: 50%;
-}
+.signin { left: 0; }
+.signup { left: 50%; }
 
 .form h2 {
   color: white;
@@ -142,7 +138,7 @@ body {
   right: -120px;
 }
 
-.image-side{
+.image-side {
   position: absolute;
   top: 0;
   width: 50%;
@@ -152,26 +148,78 @@ body {
   transition: 0.5s;
 }
 
-.image-side img{
+.image-side img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.image-login{
-  right: 0;
-  opacity: 1;
+.image-login  { right: 0; opacity: 1; }
+.image-register { left: 0; opacity: 0; }
+
+.card.active .image-login   { opacity: 0; }
+.card.active .image-register { opacity: 1; }
+
+
+/* ── RESPONSIVIDADE ── */
+
+/* Tablet (≤ 768px): esconde a imagem, formulário ocupa tudo */
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .card::before {
+    width: 100%;
+    height: 50%;
+    left: 0 !important;
+    top: 0;
+  }
+
+  .card.active::before {
+    top: 0;
+    left: 0 !important;
+  }
+
+  .image-side {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+    position: relative;
+    padding: 40px 30px;
+  }
+
+  .signin { left: 0; }
+  .signup { left: 0; }
+
+  /* Mostra apenas o formulário activo */
+  .form:not(.active) {
+    display: none;
+  }
 }
 
-.image-register{
-  left: 0%;
-  opacity: 0;
-}
+/* Mobile (≤ 480px): padding menor */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
 
-.card.active .image-login{
-  opacity: 0;
-}
+  .form {
+    padding: 32px 20px;
+  }
 
-.card.active .image-register{
-  opacity: 1;
+  .form h2 {
+    font-size: 20px;
+  }
+
+  .form input,
+  .form button {
+    padding: 11px;
+    font-size: 15px;
+  }
 }
