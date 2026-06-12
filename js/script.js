@@ -429,6 +429,8 @@ function logout() {
 
 
 // INICIALIZAÇÃO
-renderHomeNormas();
-renderList();
-renderAdminUpdates();
+window.addEventListener("load", function () {
+  if (document.getElementById("home-normas-list")) renderHomeNormas();
+  if (document.getElementById("norma-list")) renderList();
+  if (document.getElementById("admin-updates-list")) renderAdminUpdates();
+});
