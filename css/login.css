@@ -170,21 +170,21 @@ body {
     padding: 0;
   }
 
-  /* Card ocupa ecrã todo */
   .card {
     max-width: 100%;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
     border-radius: 0;
+    background: var(--primary);
   }
 
-  /* Painel azul — ocupa metade de CIMA e desce para baixo na transição */
   .card::before {
     width: 100%;
     height: 50%;
     left: 0 !important;
-    top: 0;
-    transition: top 0.5s;
+    top: 50%;
+    transition: none;
   }
 
   .card.active::before {
@@ -192,80 +192,64 @@ body {
     left: 0 !important;
   }
 
-  /* Imagem lateral — também vertical */
   .image-side {
     width: 100%;
     height: 50%;
     left: 0 !important;
     right: unset !important;
+    top: 0;
+    background: white;
     transition: opacity 0.5s;
   }
 
-  .image-login {
-    top: 0;
-    opacity: 1;
+  .image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
   }
 
-  .image-register {
-    top: 0;
-    opacity: 0;
-  }
+  .image-login  { opacity: 1; }
+  .image-register { opacity: 0; }
 
   .card.active .image-login   { opacity: 0; }
   .card.active .image-register { opacity: 1; }
 
-  /* Círculos decorativos — esconde para não sobrepor */
   .card-bg { display: none; }
 
-  /* Formulário ocupa a metade de BAIXO */
-  .signin {
-    width: 100%;
-    height: 50%;
-    top: 50%;
-    left: 0 !important;
-    padding: 32px 28px;
-  }
-
+  .signin,
   .signup {
     width: 100%;
     height: 50%;
     top: 50%;
     left: 0 !important;
-    padding: 32px 28px;
+    padding: 28px 24px;
+    background: var(--primary);
   }
 
-  /* Texto do formulário — escuro porque fundo é branco */
   .form h2 {
-    color: var(--primary);
+    color: white;
     font-size: 20px;
     margin-bottom: 14px;
   }
 
   .form input {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 10px 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
   }
 
   .form input::placeholder {
-    color: var(--muted);
+    color: rgba(255,255,255,0.5);
   }
 
   .form p {
-    color: var(--muted);
+    color: rgba(255,255,255,0.7);
   }
+}
 
-  .form button {
-    padding: 11px;
-  }
-    /* Painel azul fica em BAIXO (formulário) */
-  .card::before {
-    width: 100%;
-    height: 50%;
-    left: 0 !important;
-    top: 50%;
-    transition: top 0.5s;
-    background: linear-gradient(135deg, var(--primary), #0f172a);
+@media (max-width: 400px) {
+  .form {
+    padding: 24px 18px 28px;
   }
 }
