@@ -236,6 +236,7 @@ function showPage(page) {
 function renderHomeNormas() {
 
   const box = document.getElementById("home-normas-list");
+  if (!box) return;
 
   box.innerHTML = NORMAS.slice(0, 4).map(n => `
     <button class="norma-row" onclick="openNorma(${n.id})">
