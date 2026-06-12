@@ -217,6 +217,10 @@ body {
 
   .card-bg { display: none; }
 
+  .image-register {
+  height: 45%; /* altura da imagem do martelo */
+}
+
   .signin,
   .signup {
     width: 100%;
