@@ -213,11 +213,11 @@ body {
   }
 
   .image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
 
   .image-login  { opacity: 1; }
   .image-register { opacity: 0; }
