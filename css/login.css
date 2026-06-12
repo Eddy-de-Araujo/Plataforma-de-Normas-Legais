@@ -59,12 +59,10 @@ body {
   height: 100%;
   padding: 40px;
   z-index: 2;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   opacity: 0;
   pointer-events: none;
   transition: 0.3s;
@@ -161,94 +159,104 @@ body {
 .card.active .image-register { opacity: 1; }
 
 
-/* ── RESPONSIVIDADE LOGIN ── */
-
-@media (max-width: 768px) {
+/* ════════════════════════════════
+   MOBILE  (≤ 600px)
+   Layout vertical com transição
+════════════════════════════════ */
+@media (max-width: 600px) {
 
   body {
-    padding: 16px;
+    align-items: flex-start;
+    padding: 0;
   }
 
+  /* Card ocupa ecrã todo */
   .card {
+    max-width: 100%;
     width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 16px;
+    height: 100vh;
+    border-radius: 0;
   }
 
-  /* Esconde os círculos decorativos */
-  .card-bg {
-    display: none;
-  }
-
-  /* Painel azul ocupa topo do card */
+  /* Painel azul — ocupa metade de CIMA e desce para baixo na transição */
   .card::before {
     width: 100%;
-    height: 180px;
+    height: 50%;
     left: 0 !important;
     top: 0;
+    transition: top 0.5s;
   }
 
   .card.active::before {
+    top: 50%;
     left: 0 !important;
-    top: 0;
   }
 
-  /* Imagem dentro do painel azul no topo */
+  /* Imagem lateral — também vertical */
   .image-side {
     width: 100%;
-    height: 180px;
-    top: 0;
+    height: 50%;
     left: 0 !important;
     right: unset !important;
+    transition: opacity 0.5s;
   }
 
   .image-login {
+    top: 0;
     opacity: 1;
   }
 
   .image-register {
+    top: 0;
     opacity: 0;
   }
 
-  .card.active .image-login { opacity: 0; }
+  .card.active .image-login   { opacity: 0; }
   .card.active .image-register { opacity: 1; }
 
-  /* Formulário fica abaixo da imagem */
-  .form {
+  /* Círculos decorativos — esconde para não sobrepor */
+  .card-bg { display: none; }
+
+  /* Formulário ocupa a metade de BAIXO */
+  .signin {
     width: 100%;
-    position: relative;
-    top: 0;
+    height: 50%;
+    top: 50%;
     left: 0 !important;
-    padding: 28px 24px 32px;
-    margin-top: 180px;
+    padding: 32px 28px;
   }
 
-  .form:not(.active) {
-    display: none;
+  .signup {
+    width: 100%;
+    height: 50%;
+    top: 50%;
+    left: 0 !important;
+    padding: 32px 28px;
   }
 
+  /* Texto do formulário — escuro porque fundo é branco */
   .form h2 {
     color: var(--primary);
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .form input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 12px;
+  }
+
+  .form input::placeholder {
+    color: var(--muted);
   }
 
   .form p {
     color: var(--muted);
   }
 
-  .form input {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--fg);
-  }
-
-  .form input::placeholder {
-    color: var(--muted);
-  }
-}
-
-@media (max-width: 400px) {
-  .form {
-    padding: 24px 18px 28px;
+  .form button {
+    padding: 11px;
   }
 }
