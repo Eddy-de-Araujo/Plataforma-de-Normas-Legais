@@ -225,6 +225,10 @@ body {
   object-fit: cover;
   object-position: center center;
 }
+
+.image-side {
+  height: 40%;
+}
   .signin,
   .signup {
     width: 100%;
