@@ -284,6 +284,7 @@ function renderList() {
   );
 
   const list = document.getElementById("norma-list");
+   if (!list) return;
 
   document.getElementById("list-count").textContent =
     `${filtered.length} resultado(s)`;
@@ -383,6 +384,7 @@ function switchAdmin(section, btn) {
 function renderAdminUpdates() {
 
   const box = document.getElementById("admin-updates-list");
+  if (!box) return;
 
   box.innerHTML = NORMAS.map(n => `
     <div class="update-row">
