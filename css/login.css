@@ -179,12 +179,14 @@ body {
     background: var(--primary);
   }
 
+  /* Painel azul fica em BAIXO (formulário) */
   .card::before {
     width: 100%;
     height: 50%;
     left: 0 !important;
-    top: 0;
+    top: 50%;
     transition: top 0.5s;
+    background: linear-gradient(135deg, var(--primary), #0f172a);
   }
 
   .card.active::before {
@@ -192,34 +194,33 @@ body {
     left: 0 !important;
   }
 
+  /* Imagem fica em CIMA com fundo branco */
   .image-side {
     width: 100%;
     height: 50%;
     left: 0 !important;
     right: unset !important;
+    top: 0;
+    background: white;
     transition: opacity 0.5s;
   }
 
   .image-side img {
-    object-fit: cover;
-    object-position: center top;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
   }
 
-  .image-login {
-    top: 0;
-    opacity: 1;
-  }
-
-  .image-register {
-    top: 0;
-    opacity: 0;
-  }
+  .image-login  { opacity: 1; }
+  .image-register { opacity: 0; }
 
   .card.active .image-login   { opacity: 0; }
   .card.active .image-register { opacity: 1; }
 
   .card-bg { display: none; }
 
+  /* Formulário fica em BAIXO com fundo azul */
   .signin,
   .signup {
     width: 100%;
@@ -227,7 +228,7 @@ body {
     top: 50%;
     left: 0 !important;
     padding: 28px 24px;
-    background: var(--primary);
+    background: transparent;
   }
 
   .form h2 {
@@ -248,9 +249,5 @@ body {
 
   .form p {
     color: rgba(255,255,255,0.7);
-  }
-
-  .form button {
-    padding: 11px;
   }
 }
