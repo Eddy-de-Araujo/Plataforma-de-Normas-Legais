@@ -203,9 +203,9 @@ body {
 
   /* Imagem fica em CIMA com fundo branco */
   .image-side {
-    width: 100%;
+    width: 80%;
     height: 40%;
-    left: 0 !important;
+    left:0;
     right: unset !important;
     top: 0;
     background: white;
