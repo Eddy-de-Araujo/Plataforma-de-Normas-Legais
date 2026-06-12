@@ -169,7 +169,14 @@ body {
     align-items: flex-start;
     padding: 0;
   }
+  
+.image-login {
+  background: white;
+}
 
+.image-register {
+  background: white;
+}
   .card {
     max-width: 100%;
     width: 100%;
