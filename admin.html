@@ -12,32 +12,32 @@
 
     
 <!-- NAVBAR -->
+
 <nav>
     <div class="nav-inner">
 
         <div class="nav-brand" onclick="showPage('home')">
-    <i class="fa-solid fa-book-open" style="color: #ea580c; font-size: 18px;"></i>
-    <span>Normas Legais</span>
-</div>
+            <i class="fa-solid fa-book-open" style="color: #ea580c; font-size: 18px;"></i>
+            <span>Normas Legais</span>
+        </div>
 
         <div class="nav-links">
 
-            <button class="active"
-    onclick="window.location.href='index.html'">
-    Início
-</button>
-
-           <button
-    onclick="window.location.href='index.html#normas'">
-    Normas
-</button>
-
-            <button id="adminBtn" style="display:none;"
-            onclick="window.location.href='admin.html'">
-            Admin
+            <button onclick="window.location.href='index.html'">
+                Início
             </button>
-            
-            
+
+            <button onclick="window.location.href='index.html#normas'">
+                Normas
+            </button>
+
+            <button onclick="window.location.href='admin.html'">
+                Admin
+            </button>
+
+            <button onclick="logout()" style="color: #ea580c;">
+                Sair
+            </button>
 
         </div>
 
@@ -58,10 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- BOTÃO LOGOUT-->
-<div style="text-align:right; padding:10px;">
-    <button onclick="logout()">Sair</button>
-</div>
 
 
 <!-- ADMIN PAGE -->
