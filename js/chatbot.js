@@ -1,9 +1,4 @@
 const WORKER_URL = 'https://chatbot-normas.eddymamy2306.workers.dev';
-const CHATBOT_SYSTEM = `És um assistente jurídico da Plataforma de Normas Legais de Moçambique. 
-Respondes a questões jurídicas gerais de forma clara e acessível para qualquer cidadão.
-Sempre que possível, menciona leis ou artigos relevantes.
-Responde sempre em português europeu.
-Se a questão não for jurídica, redireciona educadamente para temas legais.`;
 
 let chatHistory = [];
 let chatOpen = false;
@@ -51,7 +46,7 @@ async function sendMessage() {
 
   appendTyping();
 
- try {
+  try {
     const response = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -61,13 +56,17 @@ async function sendMessage() {
     const data = await response.json();
     removeTyping();
 
-    const reply = data.content[0].text;
-    chatHistory.push({ role: 'assistant', content: reply });
-    appendMessage('bot', reply);
+    if (data.content && data.content[0]) {
+      const reply = data.content[0].text;
+      chatHistory.push({ role: 'assistant', content: reply });
+      appendMessage('bot', reply);
+    } else {
+      appendMessage('bot', 'Não foi possível obter resposta. Tente novamente.');
+    }
 
   } catch (err) {
     removeTyping();
-    appendMessage('bot', 'Ocorreu um erro. Tente novamente.');
+    appendMessage('bot', 'Ocorreu um erro de ligação. Tente novamente.');
   }
 }
 
@@ -77,7 +76,6 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-// Injetar HTML do chatbot
 document.addEventListener('DOMContentLoaded', function () {
   const html = `
     <div id="chat-bubble" onclick="toggleChat()">
