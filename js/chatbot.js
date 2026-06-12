@@ -51,16 +51,11 @@ async function sendMessage() {
 
   appendTyping();
 
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+ try {
+    const response = await fetch(WORKER_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 1000,
-        system: CHATBOT_SYSTEM,
-        messages: chatHistory
-      })
+      body: JSON.stringify({ messages: chatHistory })
     });
 
     const data = await response.json();
