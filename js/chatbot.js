@@ -15,7 +15,9 @@ function appendMessage(role, text) {
   const list = document.getElementById('chat-messages');
   const div = document.createElement('div');
   div.className = `chat-msg chat-msg-${role}`;
-  div.textContent = text;
+  div.innerHTML = text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
   list.appendChild(div);
   list.scrollTop = list.scrollHeight;
 }
