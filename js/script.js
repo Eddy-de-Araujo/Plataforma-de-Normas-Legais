@@ -307,7 +307,14 @@ window.addEventListener("load", function () {
     const adminBtn = document.getElementById("adminBtn");
     if (userType === "admin" && adminBtn) adminBtn.style.display = "block";
 
-    showPage("home");
+    // Verificar se deve abrir página específica
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page');
+    if (page) {
+        showPage(page);
+    } else {
+        showPage("home");
+    }
 
     if (document.getElementById("home-normas-list")) renderHomeNormas();
     if (document.getElementById("norma-list")) renderList();
