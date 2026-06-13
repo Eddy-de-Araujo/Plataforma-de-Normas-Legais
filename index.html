@@ -18,26 +18,46 @@
     
 
 <nav>
-  <div class="nav-inner">
+    <div class="nav-inner">
 
-    <div class="nav-brand" onclick="showPage('home')">
-      <i class="fa-solid fa-book-open" style="color: #ea580c; font-size: 18px;"></i>
-      <span>Normas Legais</span>
-    </div>
+        <div class="nav-brand" onclick="showPage('home')">
+    <i class="fa-solid fa-book-open" style="color: #ea580c; font-size: 18px;"></i>
+    <span>Normas Legais</span>
+</div>
 
-    <button class="nav-toggle" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
+        <div class="nav-links">
+
+            <button class="active"
+                data-page="home"
+                onclick="showPage('home')">
+                Início
+            </button>
+
+            <button
+                data-page="normas"
+                onclick="showPage('normas')">
+                Normas
+            </button>
+
+            <button id="adminBtn" style="display:none;"
+            onclick="window.location.href='admin.html'">
+            Admin
+            </button>
+
+            <button onclick="window.location.href='advogados.html'">
+    Advogados
+</button>
+
+            <button id="logoutBtn"
+        onclick="logout()">
+        Sair
     </button>
+            
+            
 
-    <div class="nav-links" id="nav-links">
-      <button class="active" data-page="home" onclick="showPage('home'); closeMenu()">Início</button>
-      <button data-page="normas" onclick="showPage('normas'); closeMenu()">Normas</button>
-      <button onclick="window.location.href='advogados.html'">Advogados</button>
-      <button id="adminBtn" style="display:none;" onclick="window.location.href='admin.html'">Admin</button>
-      <button id="logoutBtn" style="display:none; color: #ea580c;" onclick="logout()">Sair</button>
+        </div>
+
     </div>
-
-  </div>
 </nav>
 
 <!-- HOME -->
