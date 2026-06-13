@@ -301,6 +301,16 @@ function logout() {
     window.location.href = "login.html";
 }
 
+function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    if (nav) nav.classList.toggle('open');
+}
+
+function closeMenu() {
+    const nav = document.getElementById('nav-links');
+    if (nav) nav.classList.remove('open');
+}
+
 // INICIALIZAÇÃO
 window.addEventListener("load", function () {
     const userType = localStorage.getItem("userType");
