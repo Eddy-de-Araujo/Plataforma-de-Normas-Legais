@@ -146,3 +146,13 @@ window.addEventListener('load', function() {
   if (logoutBtn && userType) logoutBtn.style.display = 'block';
   renderGrid();
 });
+
+function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    if (nav) nav.classList.toggle('open');
+}
+
+function closeMenu() {
+    const nav = document.getElementById('nav-links');
+    if (nav) nav.classList.remove('open');
+}
