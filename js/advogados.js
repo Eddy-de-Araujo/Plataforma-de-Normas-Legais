@@ -142,7 +142,7 @@ function logout() {
 
 window.addEventListener('load', function() {
   const userType = localStorage.getItem('userType');
-  const btn = document.getElementById('logoutBtn');
-  if (userType && btn) btn.style.display = 'block';
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn && userType) logoutBtn.style.display = 'block';
   renderGrid();
 });
