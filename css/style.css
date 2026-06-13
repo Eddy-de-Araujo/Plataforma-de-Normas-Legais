@@ -1494,6 +1494,52 @@ body.hide-footer footer{
   }
 }
 
+/* ── NAVBAR HAMBURGER ── */
+.nav-toggle {
+  display: none;
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-inner {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0;
+    background: var(--primary);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links button {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 0;
+    color: rgba(255,255,255,0.8);
+  }
+}
+
 
 
 
