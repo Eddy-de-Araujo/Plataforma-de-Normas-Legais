@@ -254,7 +254,6 @@
   50% { opacity: 0.4; }
 }
 
-/* ── RESPONSIVIDADE ── */
 @media (max-width: 900px) {
   .advogados-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -267,20 +266,7 @@
     padding: 0 1rem;
   }
 
-  .advogados-hero {
-    padding: 2rem 1rem;
-  }
-
   .advogados-hero h1 {
     font-size: 26px;
-  }
-
-  .advogados-filtros {
-    padding: 0.75rem 1rem;
-  }
-
-  .filtro-btn {
-    padding: 6px 12px;
-    font-size: 12px;
   }
 }
