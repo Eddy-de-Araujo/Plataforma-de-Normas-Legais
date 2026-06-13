@@ -430,6 +430,15 @@ function logout() {
     window.location.href = "login.html";
 }
 
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+
+function closeMenu() {
+  const nav = document.getElementById('nav-links');
+  if (nav) nav.classList.remove('open');
+}
+
 
 // INICIALIZAÇÃO
 window.addEventListener("load", function () {
