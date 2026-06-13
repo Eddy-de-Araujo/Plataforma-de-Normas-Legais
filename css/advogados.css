@@ -260,13 +260,3 @@
   }
 }
 
-@media (max-width: 600px) {
-  .advogados-grid {
-    grid-template-columns: 1fr;
-    padding: 0 1rem;
-  }
-
-  .advogados-hero h1 {
-    font-size: 26px;
-  }
-}
