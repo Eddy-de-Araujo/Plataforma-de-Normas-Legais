@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advogados - Normas Legais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/advogados.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="window.location.href='index.html'">
+      <i class="fa-solid fa-book-open" style="color: #ea580c; font-size: 18px;"></i>
+      <span>Normas Legais</span>
+    </div>
+    <div class="nav-links">
+      <button onclick="window.location.href='index.html'">Início</button>
+      <button onclick="window.location.href='index.html'">Normas</button>
+      <button class="active">Advogados</button>
+      <button id="logoutBtn" style="display:none; color: #ea580c;" onclick="logout()">Sair</button>
+    </div>
+  </div>
+</nav>
+
+<div class="advogados-hero">
+  <div class="advogados-hero-inner">
+    <p class="hero-eyebrow">Diretório Jurídico</p>
+    <h1>Encontre o seu Advogado</h1>
+    <p>Profissionais verificados prontos para o ajudar com as suas questões legais.</p>
+  </div>
+</div>
+
+<div class="advogados-filtros">
+  <div class="advogados-filtros-inner">
+    <button class="filtro-btn active" onclick="filtrar('', this)">Todos</button>
+    <button class="filtro-btn" onclick="filtrar('Direito do Trabalho', this)">Trabalho</button>
+    <button class="filtro-btn" onclick="filtrar('Direito Penal', this)">Penal</button>
+    <button class="filtro-btn" onclick="filtrar('Direito Civil', this)">Civil</button>
+    <button class="filtro-btn" onclick="filtrar('Direito Comercial', this)">Comercial</button>
+    <button class="filtro-btn" onclick="filtrar('Direito de Família', this)">Família</button>
+  </div>
+</div>
+
+<div class="advogados-grid" id="advogados-grid"></div>
+
+<footer class="footer">
+  <div class="footer-left">© 2025 Normas Legais - República Moçambicana</div>
+  <div class="footer-links">
+    <a href="#">Glossário Jurídico</a>
+    <a href="#">Guia de Cidadania</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contactos</a>
+    <a href="#">Termos de Uso</a>
+  </div>
+</footer>
+
+<script src="js/advogados.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
