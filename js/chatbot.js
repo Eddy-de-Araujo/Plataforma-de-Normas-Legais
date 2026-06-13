@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     <div id="chat-bubble" onclick="toggleChat()">
       <i class="fa-solid fa-scale-balanced"></i>
     </div>
-
     <div id="chat-window">
       <div id="chat-header">
         <div>
@@ -90,15 +89,9 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <button onclick="toggleChat()">✕</button>
       </div>
-
       <div id="chat-messages"></div>
-
       <div id="chat-footer">
-        <input
-          type="text"
-          id="chat-input"
-          placeholder="Escreva a sua questão jurídica..."
-        />
+        <input type="text" id="chat-input" placeholder="Escreva a sua questão jurídica..."/>
         <button onclick="sendMessage()">
           <i class="fa-solid fa-paper-plane"></i>
         </button>
