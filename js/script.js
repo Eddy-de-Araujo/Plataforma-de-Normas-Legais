@@ -47,8 +47,8 @@ const NORMAS = [
     id: 1,
     titulo: "Convenção de Budapeste",
     tipo: "Convenção",
-    numero: "2021",
-    data: "2021",
+    numero: "2001",
+    data: "2001",
     categoria: "Cibercrime",
     resumo: "Convenção sobre o cibercrime.",
     pdf: "Legislacao/CONVENSAO DE BUDAPESTE.pdf"
