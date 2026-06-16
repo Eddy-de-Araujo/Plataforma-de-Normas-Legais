@@ -159,10 +159,7 @@ body {
 .card.active .image-register { opacity: 1; }
 
 
-/* ════════════════════════════════
-   MOBILE  (≤ 600px)
-   Layout vertical com transição
-════════════════════════════════ */
+
 @media (max-width: 600px) {
 
   body {
@@ -219,7 +216,7 @@ body {
 
   .image-register {
   width: 100%;
-  height: 50%; /* altura da imagem do martelo */
+  height: 50%; 
 }
 .image-side img {
   object-fit: cover;

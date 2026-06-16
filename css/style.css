@@ -456,7 +456,6 @@ nav{
 }
 
 
-
 .normas-layout{
 
     max-width:1200px;
@@ -1121,11 +1120,7 @@ body.hide-footer footer{
     display: none;
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVIDADE — CORREÇÕES GERAIS
-═══════════════════════════════════════ */
 
-/* ── Tablet (≤ 900px) ── */
 @media (max-width: 900px) {
 
   /* Hero: passa de 2 colunas para 1 */
@@ -1138,17 +1133,16 @@ body.hide-footer footer{
     font-size: 32px;
   }
 
-  /* Normas: esconde filtros laterais, ocupa tudo */
   .normas-layout {
     grid-template-columns: 1fr;
     padding: 1.5rem;
   }
 
   .filtros {
-    display: none; /* opcional: pode fazer um toggle para mobile */
+    display: none; 
   }
 
-  /* Detalhe */
+
   .detail-layout {
     padding: 1.5rem;
   }
@@ -1166,7 +1160,7 @@ body.hide-footer footer{
     grid-template-columns: 1fr;
   }
 
-  /* Admin */
+
   .admin-layout {
     grid-template-columns: 1fr;
     padding: 1.5rem;
@@ -1190,10 +1184,8 @@ body.hide-footer footer{
 }
 
 
-/* ── Mobile (≤ 640px) ── */
 @media (max-width: 640px) {
 
-  /* Nav */
   .nav-inner {
     padding: 0 1rem;
   }
@@ -1203,7 +1195,7 @@ body.hide-footer footer{
     font-size: 13px;
   }
 
-  /* Hero */
+  
   .hero {
     padding: 2.5rem 1rem;
   }
@@ -1220,19 +1212,16 @@ body.hide-footer footer{
     width: 100%;
   }
 
-  /* Stats */
   .stats-inner {
     gap: 1.5rem;
     flex-wrap: wrap;
   }
 
-  /* Home grid (já tem media em 992px, reforço) */
   .home-grid {
     padding: 1rem;
     grid-template-columns: 1fr;
   }
 
-  /* Lista de normas */
   .list-header {
     flex-direction: column;
     align-items: flex-start;
@@ -1254,7 +1243,6 @@ body.hide-footer footer{
     text-align: center;
   }
 
-  /* Tabs */
   .tabs {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -1266,24 +1254,21 @@ body.hide-footer footer{
     font-size: 13px;
   }
 
-  /* Normas layout */
   .normas-layout {
     padding: 1rem;
   }
 
-  /* Admin stats */
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Footer */
+
   footer.footer {
     padding: 14px 16px;
   }
 }
 
 
-/* ── Mobile muito pequeno (≤ 400px) ── */
 @media (max-width: 400px) {
 
   .hero h1 {
@@ -1299,7 +1284,6 @@ body.hide-footer footer{
   }
 }
 
-/* ── ADMIN RESPONSIVO ── */
 @media (max-width: 768px) {
 
   .admin-layout {
@@ -1346,7 +1330,6 @@ body.hide-footer footer{
 }
 
 
-/* ── CHATBOT ── */
 #chat-bubble {
   position: fixed;
   bottom: 24px;
@@ -1494,7 +1477,7 @@ body.hide-footer footer{
   }
 }
 
-/* ── NAVBAR HAMBURGER ── */
+
 .nav-toggle {
   display: none;
   color: white;
